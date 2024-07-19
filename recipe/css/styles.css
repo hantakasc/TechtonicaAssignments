@@ -68,3 +68,11 @@ a:hover {
   display: flex;
   flex-direction: column;
 }
+
+#myDiv input[type="checkbox"] {
+  vertical-align: middle;
+}
+
+#myDiv label {
+  display: flex;
+}
