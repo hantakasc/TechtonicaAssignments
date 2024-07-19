@@ -63,3 +63,8 @@ a:hover {
     color: palevioletred;
     text-decoration: none; 
 }
+
+#myDiv {
+  display: flex;
+  flex-direction: column;
+}
