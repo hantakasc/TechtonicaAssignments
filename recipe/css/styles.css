@@ -53,3 +53,13 @@ body {
     margin-left: 30px;
     padding: 20px;
   }
+
+  a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: palevioletred;
+    text-decoration: none; 
+}
