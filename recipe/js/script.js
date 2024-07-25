@@ -25,7 +25,7 @@ ingredients.forEach(ingredient => {
     label.htmlFor = ingredient.id;
     label.textContent = ingredient.text;
 
-    myDiv.appendChild(checkbox);
-    myDiv.appendChild(label);
+    checkboxGroup.appendChild(checkbox);
+    checkboxGroup.appendChild(label);
     myDiv.appendChild(checkboxGroup);
 });
