@@ -12,6 +12,9 @@ const ingredients = [
 ];
 
 ingredients.forEach(ingredient => {
+    let checkboxGroup = document.createElement("div");
+    checkboxGroup.className = "checkbox-group";
+
     let checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.name = "ingredient";
@@ -24,4 +27,5 @@ ingredients.forEach(ingredient => {
 
     myDiv.appendChild(checkbox);
     myDiv.appendChild(label);
+    myDiv.appendChild(checkboxGroup);
 });
