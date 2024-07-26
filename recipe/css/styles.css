@@ -139,4 +139,9 @@ h1 {
 h3 {
   font-size: 22px;
 }
+
+#image {
+  width: 100%;
+  height: auto;
+}
 }
