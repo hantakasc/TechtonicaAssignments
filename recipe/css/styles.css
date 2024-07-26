@@ -131,4 +131,8 @@ a:hover {
   width: 80%;
   padding: 15px;
 }
+
+h1 {
+  font-size: 28px;
+}
 }
