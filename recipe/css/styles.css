@@ -99,5 +99,8 @@ a:hover {
 }
 
 @media(max-width: 600px) {
-
+  .description {
+    width: 90%;
+    padding: 10px;
+  }
 }
