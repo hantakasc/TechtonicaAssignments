@@ -108,4 +108,8 @@ a:hover {
     font-size: 24px;
     padding: 10px;
   }
+
+  h3 {
+    font-size: 18px;
+  }
 }
