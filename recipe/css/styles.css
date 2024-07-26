@@ -103,4 +103,9 @@ a:hover {
     width: 90%;
     padding: 10px;
   }
+
+  h1 {
+    font-size: 24px;
+    padding: 10px;
+  }
 }
