@@ -29,3 +29,12 @@ ingredients.forEach(ingredient => {
     checkboxGroup.appendChild(label);
     myDiv.appendChild(checkboxGroup);
 });
+
+const newBackground = document.getElementById('newBackground');
+function changeBackground () {
+    const backgroundColor = prompt("What's the new background gonna be?");
+    if (backgroundColor) {
+      document.body.style.backgroundColor = backgroundColor;
+    }
+  }
+  newBackground.addEventListener('click', changeBackground);
