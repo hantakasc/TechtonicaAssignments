@@ -89,3 +89,11 @@ a:hover {
 #myDiv label {
   display: flex;
 }
+
+#newBackground {
+  display: block;
+  color: white;
+  background-color: #ffb6c1;
+  border: none;
+  min-width: 100px;
+}
