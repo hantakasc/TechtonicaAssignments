@@ -125,3 +125,7 @@ a:hover {
     padding: 10px;
   }
 }
+
+@media (min-width: 601px) and (max-width: 1025px){
+
+}
