@@ -127,5 +127,8 @@ a:hover {
 }
 
 @media (min-width: 601px) and (max-width: 1025px){
-
+.description {
+  width: 80%;
+  padding: 15px;
+}
 }
