@@ -67,3 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
 //Step 9 1/2 - Add available tickets to event
 eventObj1.addAvailableTickets("human", 299);
 eventObj1.addAvailableTickets("vampire", 99);
+
+//Step 10 - Add different types to every one of the events
+eventObj2.addAvailableTickets("General Admission", 25);
+eventObj2.addAvailableTickets("Floor Seating", 80);
+
+eventObj3.addAvailableTickets("Orchestra", 300);
+eventObj3.addAvailableTickets("Mezzanine", 200);
+eventObj3.addAvailableTickets("Balcony", 100);
