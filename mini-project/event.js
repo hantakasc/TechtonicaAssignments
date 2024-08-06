@@ -16,7 +16,7 @@ class Event {
     //Step 9 - Add TicketType class
     addAvailableTickets(ticketName, price){
         const newTicket = new TicketType(ticketName, price);
-        this.availableTickets.push(newTicket)
+        this.availableTickets.push(newTicket);
     }
 
 }
@@ -63,3 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     document.querySelector('#event').innerHTML = html;
 });
+
+//Step 9 1/2 - Add available tickets to event
+eventObj1.addAvailableTickets("human", 299);
+eventObj1.addAvailableTickets("vampire", 99);
