@@ -1,3 +1,4 @@
+//HELLO EVERYONE! :)
 //Step 8 - Add different ticket types with different prices by creating TicketType class
 class TicketType {
     constructor(ticketName, price){
@@ -32,7 +33,7 @@ class Event {
         }
         return "Eligible tickets: " + eligibleTickets.map((ticket,index) => `${index + 1 }. ${ticket.ticketName} ($${ticket.price})`). join(" ")
     }
-    //challenge: get cheapest ticket
+    //Challenge - Get cheapest ticket! HAHAHA
     getCheapestTicket(){
         if(this.availableTickets.length === 0){
             return "No tickets available"
@@ -42,7 +43,7 @@ class Event {
     }
 }
 
-//Step 2
+//Step 2 
 //This will create an obect!
 const eventObj1 = new Event(
     'KLOS Golden Gala', //name
