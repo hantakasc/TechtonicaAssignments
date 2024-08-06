@@ -13,3 +13,15 @@ const eventObj1 = new Event(
     'KLOS Golden Gala', //name
     'An evening with hollywood vampires' //description
 );
+
+//Step 3 - Creating more objects with different values
+const eventObj2 = new Event(
+    'Skillet & Sevendust', 
+    'Victorious war tour'
+);
+
+
+const eventObj3 = new Event(
+    'Jenny Lewis',
+    'On the line tour 2019'
+);
