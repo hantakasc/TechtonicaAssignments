@@ -13,6 +13,12 @@ class Event {
         this.description = description;
         this.availableTickets = [];
     }
+    //Step 9 - Add TicketType class
+    addAvailableTickets(ticketName, price){
+        const newTicket = new TicketType(ticketName, price);
+        this.availableTickets.push(newTicket)
+    }
+
 }
 
 //Step 2
