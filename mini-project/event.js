@@ -25,3 +25,6 @@ const eventObj3 = new Event(
     'Jenny Lewis',
     'On the line tour 2019'
 );
+
+//Step 4 - Create an empty event array
+const eventArray = new Array(); //constructor notation
