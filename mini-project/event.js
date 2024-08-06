@@ -18,7 +18,12 @@ class Event {
         const newTicket = new TicketType(ticketName, price);
         this.availableTickets.push(newTicket);
     }
-
+    //Step 11 - Add allTickets that returns a string that represents all ticket types and prices
+    allTickets(){
+        return "All tickets: " + this.availableTickets.map
+        ((ticket, index) => `${index + 1}. ${ticket.ticketName} 
+        ($${ticket.price})`).join(" ")
+    }
 }
 
 //Step 2
