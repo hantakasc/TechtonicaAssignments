@@ -32,6 +32,14 @@ class Event {
         }
         return "Eligible tickets: " + eligibleTickets.map((ticket,index) => `${index + 1 }. ${ticket.ticketName} ($${ticket.price})`). join(" ")
     }
+    //challenge: get cheapest ticket
+    getCheapestTicket(){
+        if(this.availableTickets.length === 0){
+            return "No tickets available"
+        }
+        const cheapestTicket = this.availableTickets.reduce((min, ticket) => ticket.price < min.price ? ticket : min);
+        return `Cheapest Ticket: ${cheapestTicket.ticketName} ($${cheapestTicket.price})`
+    }
 }
 
 //Step 2
@@ -78,13 +86,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //Step 12 - call allTickets to display the ticket types
- document.addEventListener('DOMContentLoaded', () => {
-     let html = '';
-     eventArray.forEach((event) => {
-       html += `<li>${event.name} - ${event.description} - ${event.allTickets()}</li>`;
-     });
+ //document.addEventListener('DOMContentLoaded', () => {
+     //let html = '';
+     //eventArray.forEach((event) => {
+       //html += `<li>${event.name} - ${event.description} - ${event.allTickets()}</li>`;
+     //});
+    //document.querySelector('#event').innerHTML = html;
+  //});
+  
+  //Step 14 - View the search tickets
+  document.addEventListener('DOMContentLoaded', () => {
+    let html = '';
+    eventArray.forEach((event) => {
+        html += `<li> ${event.name} - ${event.description} - ${event.searchTickets(0, 100)}</li>`
+    })
     document.querySelector('#event').innerHTML = html;
-  });
+}) 
 
 //Step 9 1/2 - Add available tickets to event
 eventObj1.addAvailableTickets("human", 299);
@@ -97,3 +114,9 @@ eventObj2.addAvailableTickets("Floor Seating", 80);
 eventObj3.addAvailableTickets("Orchestra", 300);
 eventObj3.addAvailableTickets("Mezzanine", 200);
 eventObj3.addAvailableTickets("Balcony", 100);
+
+
+//test cases for searchTickets function
+//console.log("Test case 1:", eventObj3.searchTickets(0,250))
+//test case for cheapest ticket
+console.log("Event 1:", eventObj1.getCheapestTicket())//returns the cheapest ticket
