@@ -24,6 +24,14 @@ class Event {
         ((ticket, index) => `${index + 1}. ${ticket.ticketName} 
         ($${ticket.price})`).join(" ")
     }
+    //Step 13 - Add searchTickets to specify the lower and upper bounds of price range
+    searchTickets(low, high){
+        const eligibleTickets = this.availableTickets.filter(ticket => ticket.price >= low && ticket.price <= high);
+        if (eligibleTickets.length === 0){
+            return "No tickets available"
+        }
+        return "Eligible tickets: " + eligibleTickets.map((ticket,index) => `${index + 1 }. ${ticket.ticketName} ($${ticket.price})`). join(" ")
+    }
 }
 
 //Step 2
