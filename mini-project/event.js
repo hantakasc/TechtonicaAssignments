@@ -69,6 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#event').innerHTML = html;
 });
 
+//Step 12 - call allTickets to display the ticket types
+ document.addEventListener('DOMContentLoaded', () => {
+     let html = '';
+     eventArray.forEach((event) => {
+       html += `<li>${event.name} - ${event.description} - ${event.allTickets()}</li>`;
+     });
+    document.querySelector('#event').innerHTML = html;
+  });
+
 //Step 9 1/2 - Add available tickets to event
 eventObj1.addAvailableTickets("human", 299);
 eventObj1.addAvailableTickets("vampire", 99);
