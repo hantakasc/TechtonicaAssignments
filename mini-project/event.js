@@ -31,7 +31,21 @@ const eventArray = new Array(); //constructor notation
 
 //Step 5 - Push objects created into the array!
 //Pushing a single object
-eventArray.push(eventObj1);
+//eventArray.push(eventObj1);
 //Pushing multiple obejcts
 eventArray.push(eventObj1, eventObj2, eventObj3);
-console.log(eventArray);
+
+//Step 6 - Check the elements pushed
+//console.log(eventArray);
+
+//Step 7 - Iterate though the eventArray 
+//forEach() to iterate through objects
+//.innerHTML to return the HTML code from js file to the target element of the page
+document.addEventListener('DOMContentLoaded', () => {
+    //handler when the dom is fully loaded to prevent javascript from running before the document is finished loading
+    let html = '';
+    eventArray.forEach((item) => {
+        html += `<li>${item.name} - ${item.description}`;
+    });
+    document.querySelector('#event').innerHTML = html;
+});
