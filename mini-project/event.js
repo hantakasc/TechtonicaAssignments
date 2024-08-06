@@ -28,3 +28,10 @@ const eventObj3 = new Event(
 
 //Step 4 - Create an empty event array
 const eventArray = new Array(); //constructor notation
+
+//Step 5 - Push objects created into the array!
+//Pushing a single object
+eventArray.push(eventObj1);
+//Pushing multiple obejcts
+eventArray.push(eventObj1, eventObj2, eventObj3);
+console.log(eventArray);
