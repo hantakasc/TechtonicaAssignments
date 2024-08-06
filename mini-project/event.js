@@ -1,3 +1,11 @@
+//Step 8 - Add different ticket types with different prices by creating TicketType class
+class TicketType {
+    constructor(ticketName, price){
+        this.ticketName = ticketName;
+        this.price = price; 
+    }
+}
+
 //Step 1
 class Event {
     constructor(name, description) {
