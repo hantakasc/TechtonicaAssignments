@@ -6,7 +6,18 @@
     <title>Guess the Number</title>
 </head>
 <body>
-
+    <div class="container">
+        <h1>Guess the Number</h1>
+        <p>Feeling brave? Guess a number between 1 and 100:</p>
+        <input type="number" id="guess-input" min="1" max="100" placeholder="Enter your guess silly goose">
+        <button id="submit-guess">Press to guess 🤔</button>
+        <p id="feedback" class="feedback"></p>
+        <div class="stats">
+            <p>Wrong guesses: <span id="wrong-guess-count">0</span></p>
+            <p>Number you already guessed:</p>
+            <ul id="guessed-numbers" class="guesses"></ul>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
