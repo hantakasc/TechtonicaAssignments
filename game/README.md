@@ -1,8 +1,8 @@
-#Guess the Number Game
+<h1>Guess the Number Game<h1>
 
 Welcome to the Guess the Number game! This is a game where you try to guess a randomly generated number between 1-100. The game tells you if the guess is too high, too low, or correct and also tracks the number of wrong guesses. It will display all guessed numbers.
 
-##How to Play: 
+<h2>How to Play:<h2> 
 
 First, Enter a Guess:
 -Type a number between 1 and 100 into the input field.
