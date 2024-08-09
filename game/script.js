@@ -45,6 +45,24 @@ document.addEventListener('DOMContentLoaded', () => {
         //Add the new guessed numer to the guessed numbers
          guessedNumbersSet.add(guess);
          updateGuessedNumbers(); //Update the list of guessed numbers
+         
+         //Compare the guess to the secret number 
+        if (guess === secretNumber) {
+            feedback.textContent = `Congratulations, silly goose! It's the number ${secretNumber}!`; //Player wins
+            feedback.style.color = 'green'; //Change feedback text color to green
+        } else if (guess < secretNumber) {
+            feedback.textContent = 'Too low silly goose! Try again.'; //Tell player if the guess is too low
+            feedback.style.color = 'red'; //Change feedback text color to red
+            wrongGuesses++; //Increment the wrong guesses counter
+        } else {
+            feedback.textContent = 'Too high, silly goose! Try again.'; //Tell player if the guess is too high
+            feedback.style.color = 'red'; //Change feedback text color to red
+            wrongGuesses++; //Increment the wrong guesses counter
+        }
+
+        //Update the wrong guesses count displayed on the page
+        wrongGuessCount.textContent = wrongGuesses;
+        guessInput.value = ''; //Clear the input field for the next guess
  
     })
         
