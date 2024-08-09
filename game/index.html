@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess the Number</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Guess the Number🦆</h1>
         <p>Feeling brave? Guess a number between 1 and 100:</p>
+        <!-- Input field for entering guesses -->
         <input type="number" id="guess-input" min="1" max="100" placeholder="Enter your guess silly goose 🦆">
+        <!-- Submit button -->
         <button id="submit-guess">Press to guess 🤔</button>
         <p id="feedback" class="feedback"></p>
         <div class="stats">
+             <!-- Paragraph counting wrong guesses -->
             <p>Wrong guesses: <span id="wrong-guess-count">0</span></p>
             <p>Number you already guessed:</p>
+            <!-- List of guessed numbers -->
             <ul id="guessed-numbers" class="guesses"></ul>
         </div>
     </div>
