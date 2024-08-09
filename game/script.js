@@ -13,4 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let wrongGuesses = 0;
     //Set to store guessed numbers and prevent duplicates
     let guessedNumbersSet = new Set();
+
+    //Function to update the list of guessed numbers displayed on the page
+     function updateGuessedNumbers() {
+        guessedNumbers.innerHTML = ''; //Clear the existing list
+        guessedNumbersSet.forEach(number => {
+            const listItem = document.createElement('li'); //Create a new list item
+            listItem.textContent = number; //Set the text content to the guessed number
+            guessedNumbers.appendChild(listItem); //Add the list item to the guessed numbers list
+        });
+    }
 })
