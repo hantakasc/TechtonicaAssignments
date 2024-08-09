@@ -28,6 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
         //Get user input and trim
         const inputValue = guessInput.value.trim();
         //Convert the input to a number
-        const guess = Number(inputValue); })
+        const guess = Number(inputValue); 
+         
+        //Validate
+         if (isNaN(guess) || guess < 1 || guess > 100) {
+            feedback.textContent = 'Please enter a number between 1 and 100.'; //Error message if input invalid
+            return;
+        }
+    })
         
 })
