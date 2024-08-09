@@ -32,7 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
          
         //Validate
          if (isNaN(guess) || guess < 1 || guess > 100) {
-            feedback.textContent = 'Please enter a number between 1 and 100.'; //Error message if input invalid
+            feedback.textContent = 'Enter a number between 1 and 100 silly goose'; //Error message if input invalid
+            return;
+        }
+        //Check if the number has been guessed already
+        if (guessedNumbersSet.has(guess)) {
+            feedback.textContent = 'Silly goose, you already guessed that number!'; //Tell player if they already guessed that number
             return;
         }
     })
