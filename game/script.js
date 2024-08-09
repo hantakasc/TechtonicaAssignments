@@ -23,4 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
             guessedNumbers.appendChild(listItem); //Add the list item to the guessed numbers list
         });
     }
+    // Event listener for when the the submit button is clicked
+    submitGuess.addEventListener('click', () => {
+        //Get user input and trim
+        const inputValue = guessInput.value.trim();
+        //Convert the input to a number
+        const guess = Number(inputValue); })
+        
 })
