@@ -35,11 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
             feedback.textContent = 'Enter a number between 1 and 100 silly goose'; //Error message if input invalid
             return;
         }
+        
         //Check if the number has been guessed already
         if (guessedNumbersSet.has(guess)) {
             feedback.textContent = 'Silly goose, you already guessed that number!'; //Tell player if they already guessed that number
             return;
         }
+         
+        //Add the new guessed numer to the guessed numbers
+         guessedNumbersSet.add(guess);
+         updateGuessedNumbers(); //Update the list of guessed numbers
+ 
     })
         
 })
