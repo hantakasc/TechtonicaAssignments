@@ -51,6 +51,19 @@ const GuessTheNumber: React.FC = () => {
     // Add the new guessed number to the list
     setGuessedNumbers([...guessedNumbers, guess]);
 
-
-}
+     // Compare the player's guess with the secret number
+     if (guess === secretNumber) {
+        // If the guess is right, display the congrats message.
+        setFeedback(`Congratulations, silly goose! You guessed the number ${secretNumber}!`);
+      } else {
+        // If the guess is wrong, increment the wrong guesses counter
+        setWrongGuesses(wrongGuesses + 1);
+  
+        // Display message based on if the guess was too low or too high
+        setFeedback(guess < secretNumber ? 'Too low, silly goose! Try again.' : 'Too high, silly goose! Try again.');
+      }
+  
+      // Clear the input field for the next guess
+      setGuess('');
+    };
 }
