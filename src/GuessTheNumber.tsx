@@ -20,4 +20,15 @@ const GuessTheNumber: React.FC = () => {
 
     // This state variable keeps track of all the numbers that player already guessed
     const [guessedNumbers, setGuessedNumbers] = useState<number[]>([]);
+
+     // Function that handles changes in the input field
+  const handleGuessChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // Get the current value of the input field
+    const value = event.target.value;
+
+    // Update the guess state
+    // If the input is empty, set guess to an empty string
+    // if not, then convert the value to a number and update the guess state
+    setGuess(value === '' ? '' : Number(value));
+  };
 }
