@@ -103,3 +103,5 @@ const GuessTheNumber: React.FC = () => {
     </div>
   );
 };
+
+export default GuessTheNumber; // Export the GuessTheNumber so it can be used in other files
