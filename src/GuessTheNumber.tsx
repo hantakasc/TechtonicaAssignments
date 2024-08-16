@@ -11,4 +11,7 @@ const GuessTheNumber: React.FC = () => {
   // State variable holds the player's current guess
   // It can be a number or an empty string when the input area is cleared
   const [guess, setGuess] = useState<number | ''>('');
+
+    // State variable that holds the feedback messages shown to the player
+    const [feedback, setFeedback] = useState<string>('');
 }
