@@ -31,4 +31,15 @@ const GuessTheNumber: React.FC = () => {
     // if not, then convert the value to a number and update the guess state
     setGuess(value === '' ? '' : Number(value));
   };
+
+  // Function that handles the form submission when the player clicks on the submit button
+  const handleSubmit = () => {
+    // Validate the player's guess
+    if (guess === '' || isNaN(guess) || guess < 1 || guess > 100) {
+      // If the guess is invalid, set messaege prompting to enter a valid number
+      setFeedback('Enter a number between 1 and 100, silly goose!');
+      return;
+    }
+
+}
 }
