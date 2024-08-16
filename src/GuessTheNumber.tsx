@@ -7,4 +7,8 @@ const GuessTheNumber: React.FC = () => {
      // Use the state variable to hold the secret number that the player guesses
   // The secretNumber is randomly generated between 1 and 100
   const [secretNumber] = useState<number>(Math.floor(Math.random() * 100) + 1);
+
+  // State variable holds the player's current guess
+  // It can be a number or an empty string when the input area is cleared
+  const [guess, setGuess] = useState<number | ''>('');
 }
