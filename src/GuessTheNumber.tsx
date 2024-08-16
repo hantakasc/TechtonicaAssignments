@@ -66,4 +66,40 @@ const GuessTheNumber: React.FC = () => {
       // Clear the input field for the next guess
       setGuess('');
     };
-}
+      // Render component
+  return (
+    <div className="container">
+      <h1>Guess the Number, silly goose!</h1>
+      <p>Guess a number between 1 and 100:</p>
+
+      <input
+        type="number" // Number input
+        value={guess === '' ? '' : guess} // Set the value for input field
+        onChange={handleGuessChange} // Call handleGuessChange function when the input changes
+        min="1" // Min value 
+        max="100" // Max value
+        placeholder="Enter your guess here, silly goose" // Placeholer text for the input
+      />
+
+      <button onClick={handleSubmit}>Submit Guess</button>
+
+      {/* Paragraph to display message */}
+      <p className="feedback">{feedback}</p>
+
+      {/* Section for game stats */}
+      <div className="stats">
+        {/* Num of wrong guesses */}
+        <p>Wrong guesses: {wrongGuesses}</p>
+
+        {/* List of guessed numbers */}
+        <p>Numbers guessed:</p>
+        <ul>
+          {/* Map over the guessedNumbers array and render each number as a list item */}
+          {guessedNumbers.map((number, index) => (
+            <li key={index}>{number}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
