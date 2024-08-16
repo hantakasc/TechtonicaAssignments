@@ -1,18 +1,15 @@
-import { Environment, OrbitControls } from "@react-three/drei"
-import { Canvas } from "@react-three/fiber"
+import React from 'react';
+import GuessTheNumber from './GuessTheNumber'; // Import GuessTheNumber 
+import './App.css'; // Import CSS file
 
-function App() {
-	return (
-		<Canvas>
-			<Environment preset="sunset" />
-			<OrbitControls autoRotate />
+// Define App component
+const App: React.FC = () => {
+  return (
+    <div className="App">
+      {/* Render the GuessTheNumber component */}
+      <GuessTheNumber />
+    </div>
+  );
+};
 
-			<mesh>
-				<dodecahedronGeometry />
-				<meshPhysicalMaterial color="hotpink" />
-			</mesh>
-		</Canvas>
-	)
-}
-
-export default App
+export default App;
