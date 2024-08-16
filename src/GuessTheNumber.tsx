@@ -41,5 +41,16 @@ const GuessTheNumber: React.FC = () => {
       return;
     }
 
+     // Check if the guessed number is already in the list of guessed numbers
+    if (guessedNumbers.includes(guess)) {
+      // If the number has already been guessed, set feedback message to notify user
+      setFeedback('Silly goose, you already guessed that number!');
+      return; // Exit the function early
+    }
+
+    // Add the new guessed number to the list
+    setGuessedNumbers([...guessedNumbers, guess]);
+
+
 }
 }
