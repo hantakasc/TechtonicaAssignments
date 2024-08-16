@@ -17,4 +17,7 @@ const GuessTheNumber: React.FC = () => {
 
       // State variable that counts the number of wrong guesses the player enters
   const [wrongGuesses, setWrongGuesses] = useState<number>(0);
+
+    // This state variable keeps track of all the numbers that player already guessed
+    const [guessedNumbers, setGuessedNumbers] = useState<number[]>([]);
 }
