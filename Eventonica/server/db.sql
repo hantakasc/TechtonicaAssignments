@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: events_id_seq; Type: TABLE; Schema: public; Owner: Christina
+-- Name: events_id_seq; Type: TABLE; Schema: public; Owner: christinahantakas
 --
 
 CREATE TABLE public.events (
@@ -33,7 +33,7 @@ CREATE TABLE public.events (
 
 
 --
--- Name: events_id_seq; Type: SEQUENCE; Schema: public; Owner: Christina
+-- Name: events_id_seq; Type: SEQUENCE; Schema: public; Owner: christinahantakas
 --
 
 CREATE SEQUENCE public.events_id_seq
@@ -46,21 +46,21 @@ CREATE SEQUENCE public.events_id_seq
 
 
 --
--- Name: events_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Christina
+-- Name: events_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: christinahantakas
 --
 
 ALTER SEQUENCE public.events_id_seq OWNED BY public.events.id;
 
 
 --
--- Name: events_id_seq id; Type: DEFAULT; Schema: public; Owner: Christina
+-- Name: events_id_seq id; Type: DEFAULT; Schema: public; Owner: christinahantakas
 --
 
 ALTER TABLE ONLY public.events ALTER COLUMN id SET DEFAULT nextval('public.events_id_seq'::regclass);
 
 
 --
--- Data for Name: events; Type: TABLE DATA; Schema: public; Owner: Christina
+-- Data for Name: events; Type: TABLE DATA; Schema: public; Owner: christinahantakas
 --
 
 COPY public.events (id, name, category) FROM stdin;
@@ -73,14 +73,14 @@ COPY public.events (id, name, category) FROM stdin;
 
 
 --
--- Name: events_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Christina
+-- Name: events_id_seq; Type: SEQUENCE SET; Schema: public; Owner: christinahantakas
 --
 
 SELECT pg_catalog.setval('public.events_id_seq', 5, true);
 
 
 --
--- Name: events events_pkey; Type: CONSTRAINT; Schema: public; Owner: Christina
+-- Name: events events_pkey; Type: CONSTRAINT; Schema: public; Owner: christinahantakas
 --
 
 ALTER TABLE ONLY public.events
