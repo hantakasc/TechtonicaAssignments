@@ -1,5 +1,5 @@
 // src/components/Event.jsx
-import React from 'react';
+import React, { useState } from 'react';
 
 const Event = ({ event, onDelete, onUpdate }) => {
     const [loading, setLoading] = useState(false);
