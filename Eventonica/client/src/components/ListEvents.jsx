@@ -131,7 +131,7 @@ const ListEvents = () => {
                 onUpdateEvent={updateEvent}
                 onCancelEdit={() => dispatch({ type: ACTIONS.SET_EDITING_EVENT, payload: null })}
             />
-        </div>
+        </div> 
     );
 };
 
