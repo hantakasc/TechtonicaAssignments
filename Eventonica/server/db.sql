@@ -21,22 +21,22 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: students; Type: TABLE; Schema: public; Owner: -
+-- Name: events_id_seq; Type: TABLE; Schema: public; Owner: Christina
 --
 
-CREATE TABLE public.students (
+CREATE TABLE public.events (
     id integer NOT NULL,
-    firstname character varying(255),
-    lastname character varying(255),
-    is_current boolean
+    name character varying(255),
+    category character varying(255),
+    PRIMARY KEY (id)
 );
 
 
 --
--- Name: students_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: events_id_seq; Type: SEQUENCE; Schema: public; Owner: Christina
 --
 
-CREATE SEQUENCE public.students_id_seq
+CREATE SEQUENCE public.events_id_seq
     AS integer
     START WITH 1
     INCREMENT BY 1
@@ -46,40 +46,45 @@ CREATE SEQUENCE public.students_id_seq
 
 
 --
--- Name: students_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: events_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Christina
 --
 
-ALTER SEQUENCE public.students_id_seq OWNED BY public.students.id;
-
-
---
--- Name: students id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.students ALTER COLUMN id SET DEFAULT nextval('public.students_id_seq'::regclass);
+ALTER SEQUENCE public.events_id_seq OWNED BY public.events.id;
 
 
 --
--- Data for Name: students; Type: TABLE DATA; Schema: public; Owner: -
+-- Name: events_id_seq id; Type: DEFAULT; Schema: public; Owner: Christina
 --
 
-COPY public.students (id, firstname, lastname, is_current) FROM stdin;
+ALTER TABLE ONLY public.events ALTER COLUMN id SET DEFAULT nextval('public.events_id_seq'::regclass);
+
+
+--
+-- Data for Name: events; Type: TABLE DATA; Schema: public; Owner: Christina
+--
+
+COPY public.events (id, name, category) FROM stdin;
+1   Movie Night     Movie
+2   Dinner          Eats
+3   Art Museum      Exhibits
+4   Beach           Outside
+5   Game Night      Inside
 \.
 
 
 --
--- Name: students_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: events_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Christina
 --
 
-SELECT pg_catalog.setval('public.students_id_seq', 1, false);
+SELECT pg_catalog.setval('public.events_id_seq', 5, true);
 
 
 --
--- Name: students students_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: events events_pkey; Type: CONSTRAINT; Schema: public; Owner: Christina
 --
 
-ALTER TABLE ONLY public.students
-    ADD CONSTRAINT students_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY public.events
+    ADD CONSTRAINT events_pkey PRIMARY KEY (id);
 
 
 --
