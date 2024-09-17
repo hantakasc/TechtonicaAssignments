@@ -1,3 +1,5 @@
+DATABASE_URI="postgresql://postgres:Calle100No11B90@localhost/techtonica"
+
 //If you have a postgres db with an user and password - 
 //Replace everything between the <> with your variables and remove the <>
 DB_URI="postgresql://<user>:<password>@localhost/<database>"
