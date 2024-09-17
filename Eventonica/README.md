@@ -1,4 +1,3 @@
-#Eventonica
 Eventonica is an application designed to showcase various events. Users can view a list of upcoming events and have the capability to add, edit, or remove events. Additionally, users can search for events by title.
 
 Key Features
