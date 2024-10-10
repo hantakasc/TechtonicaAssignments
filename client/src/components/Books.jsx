@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import BookItem from './BookItem';
 import BookForm from './BookForm';
-//import Card from 'react-bootstrap/Card';
-//import Button from 'react-bootstrap/Button';
-//import * as ioicons from 'react-icons/io5'
+
 
 const Books = () => {
     // State to hold the list of books fetched from the server
@@ -13,7 +11,7 @@ const Books = () => {
     // State to see app is loading data
     const [loading, setLoading] = useState(true);
      // State for error message if fetching fails
-     const [error, setError] = useState('');
+    const [error, setError] = useState('');
      
      // Function to fetch books from the backend API
     const fetchBooks = async () => {
@@ -53,7 +51,7 @@ const Books = () => {
            fetchBooks(); // Refresh the list of books after adding
         } catch (error) {
             // If there is an error, set the error message
-            setError('Error adding book:' + 'error.message');
+            setError('Error adding book:' + error.message);
         }
     };
 
@@ -61,7 +59,7 @@ const Books = () => {
     const handleUpdateBook = async (updatedBook) => {
         try{
             // Make a PUT request to update an existing book
-            await fetch('http://localhost:8080/api/books/${updatedBook.book_id}', {
+            await fetch(`http://localhost:8080/api/books/${updatedBook.book_id}`, {
                 method: 'PUT', // We're updating an already existing resource
                 headers: {
                     'Content-Type': 'application/json', // Tell the server we're sending JSON data
@@ -77,7 +75,37 @@ const Books = () => {
     };
 
     // Function to handle deleting a book
-}
+    const handleDeleteBook = async (id) => {
+        try {
+            await fetch(`http://localhost:8080/api/books/${id}`, {
+                method: 'DELETE', // The request method is deletion
+            });
+            fetchBooks(); // Refresh the book list
+        } catch (error) {
+            console.error('Error deleting the book', error); // Tells us any errors
+        }
+    };
+    return (
+        <div>
+             {loading && <p>Loading...</p>} 
+             {error && <p style={{ color: 'red' }}>{error}</p>}  
+            <BookForm 
+            onSubmit={editBook ? handleUpdateBook : handleAddBook}
+            editBook={editBook} // Passing book to be edited
+            />
+            <ul>
+                {books.map((book) => (
+                    <BookItem
+                    key={book.book_id} // Unique key each book
+                    book={book} // Passing the book data
+                    onEdit={() => setEditBook(book)} // Setting the current book for editing
+                    onDelete={() => handleDeleteBook(book.book_id)} // This handles deletion
+                     />
+                ))}
+            </ul>
+        </div>
+    );
+};
 
 
 
