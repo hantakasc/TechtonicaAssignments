@@ -19,7 +19,7 @@ const Books = () => {
         setError(''); // Clear any previous error messages
      try {
         // Make a request to server to get list of books using fetch
-        const response = await fetch('http://localhost:8080/api/books');
+        const response = await fetch('http://localhost:8000/api/books');
         // Check if the response is not okay (like a 404 error)
         if (!response.ok) throw new Error('Failed to fetch books');
         const data = await response.json(); //Parse the JSON response into a JavaScript object
@@ -41,7 +41,7 @@ const Books = () => {
     const handleAddBook = async (newBook) => {
         try {
            // Make a POST request to add a new book
-           await fetch('http://localhost:8080/api/books', {
+           await fetch('http://localhost:8000/api/books', {
             method: 'POST', // Sending data to create a new resource
             headers: {
                 'Content-Type': 'application/json', // Tell the server we're sending JSON data
@@ -59,7 +59,7 @@ const Books = () => {
     const handleUpdateBook = async (updatedBook) => {
         try{
             // Make a PUT request to update an existing book
-            await fetch(`http://localhost:8080/api/books/${updatedBook.book_id}`, {
+            await fetch(`http://localhost:8000/api/books/${updatedBook.book_id}`, {
                 method: 'PUT', // We're updating an already existing resource
                 headers: {
                     'Content-Type': 'application/json', // Tell the server we're sending JSON data
@@ -77,7 +77,7 @@ const Books = () => {
     // Function to handle deleting a book
     const handleDeleteBook = async (id) => {
         try {
-            await fetch(`http://localhost:8080/api/books/${id}`, {
+            await fetch(`http://localhost:8000/api/books/${id}`, {
                 method: 'DELETE', // The request method is deletion
             });
             fetchBooks(); // Refresh the book list
