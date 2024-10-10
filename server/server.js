@@ -7,13 +7,13 @@ const { title } = require('process');
 
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8000;
 app.use(cors());
 app.use(express.json());
 
 // creates an endpoint for the route "/""
 app.get('/', (req, res) => {
-    res.json({ message: 'Hola, from My template ExpressJS with React-Vite' });
+    res.json({ message: 'Hey there, from My template ExpressJS with React-Vite' });
 });
 
 // create the get request for books in the endpoint '/api/books'
@@ -87,5 +87,5 @@ app.put('/api/books/:bookId', async (req, res) =>{
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
-    console.log(`Hola, Server listening on ${PORT}`);
+    console.log(`Hey there, Server listening on ${PORT}`);
 });
