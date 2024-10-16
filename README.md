@@ -7,7 +7,7 @@ Book Manager is a web application that allows users to manage their book collect
 - [Installation](#installation)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [API](#api)
+- [API Endpoints](#api-endpoints)
 - [Testing](#testing)
 
 
