@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css'
 //import 'bootstrap/dist/css/bootstrap.min.css';
 //import MyNavBar from './components/Navbar'
@@ -8,10 +9,11 @@ function App() {
   return (
     <div className="App">
       {/*<MyNavBar /> */}
+      <h1>Book Manager!</h1>
       <Books />
-{/*<h1>HELLO</h1> */}
+      
     </div>
   )
 }
 
-export default App
+export default App;
