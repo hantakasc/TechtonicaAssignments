@@ -26,20 +26,20 @@ cd server
 npm install
 
 3. Create a .env file in the server directory and add your database credentials
-DB_URI="postgresql://<user>:<password>@localhost/<database>"
+`DB_URI="postgresql://<user>:<password>@localhost/<database>"`
 
 4. Start the server
-npm run dev
+`npm run dev`
 
 ## Set Up the Client
 1. Navigate to the client directory
-cd ../client
+`cd ../client`
 
 2. Install dependencies
-npm install
+`npm install`
 
 3. Start the client
-npm run dev
+`npm run dev`
 
 ## Features 
 - Add, edit, or delete books.
@@ -66,17 +66,17 @@ To run tests for the client and the server follow these steps:
 
 ### Client Tests
 1. Navigate to the client directory
-cd client
+`cd client`
 
 2. Run the tests 
-npm test
+`npm test`
 
 ### Server Tests
 1. Navigate to the server directory 
-cd ../server
+`cd ../server`
 
 2. Run the tests
-npm test
+`npm test`
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details
