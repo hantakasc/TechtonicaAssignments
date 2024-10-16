@@ -1,9 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
-const path = require('path');
+//const path = require('path');
 const db = require('./db/db-connection.js');
-const { title } = require('process');
+//const { title } = require('process');
 
 
 const app = express();
@@ -22,7 +22,8 @@ app.get('/api/books', async (req, res) => {
         const { rows: books } = await db.query('SELECT * FROM books');
         res.send(books);
     } catch (e) {
-        return res.status(400).json({ e });
+        console.error("Error fetching books:", e)
+        return res.status(400).json({ error: "Error fetching books", details: e.message });
     }
 });
 
@@ -34,7 +35,7 @@ app.post('/api/books', async (req, res) => {
             author: req.body.author,
             publication_date: req.body.publication_date
         };
-        //console.log([newBook.title, neBook.author, newBook.publication_date]);
+        //console.log([newBook.title, newBook.author, newBook.publication_date]);
         const result = await db.query(
             'INSERT INTO books(title, author, publication_date) VALUES($1, $2, $3) RETURNING *',
             [newBook.title, newBook.author, newBook.publication_date],
@@ -53,7 +54,7 @@ app.post('/api/books', async (req, res) => {
 app.delete('/api/books/:bookId', async (req, res) => {
     try {
         const bookId = req.params.bookId;
-        await db.query('DELETE FROM books WHERE id=$1', [bookId]);
+        await db.query('DELETE FROM books WHERE book_id=$1', [bookId]);
         console.log("From the delete request-url", bookId);
         res.status(200).end();
     } catch (e) {
@@ -72,7 +73,7 @@ app.put('/api/books/:bookId', async (req, res) =>{
     console.log("In the server from the url - the book id", bookId);
     console.log("In the server, from the react - the book to be edited", updatedBook);
     // UPDATE students SET lastname = "something" WHERE id="16";
-    const query = `UPDATE books SET title=$1, author=$2, publication_date=$3 WHERE id=${bookId} RETURNING *`;
+    const query = `UPDATE books SET title=$1, author=$2, publication_date=$3 WHERE book_id=${bookId} RETURNING *`;
     const values = [updatedBook.title, updatedBook.author, updatedBook.publication_date];
     try {
       const updated = await db.query(query, values);
