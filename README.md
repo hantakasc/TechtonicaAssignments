@@ -5,13 +5,11 @@ Book Manager is a web application that allows users to manage their book collect
 
 ## Table of Contents
 - [Installation](#installation)
-- [Usage](#usage)
 - [Features](#features)
+- [Tech Stack](#tech-stack)
 - [API](#api)
 - [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
-- [Code Style](#code-style)
+
 
 ## Installation
 To install and run this project locally, follow these steps:
@@ -42,6 +40,16 @@ npm install
 
 3. Start the client
 npm run dev
+
+## Features 
+- Add, edit, or delete books.
+- Search and filter books by title and author.
+
+## Tech Stack
+- **Fontend:** React, Vite
+- **Backend:** Node.js, Express
+- **Database:** PostgreSQL
+- **Testing:** Jest, React Testing Library
 
 ## API Endpoints
 
