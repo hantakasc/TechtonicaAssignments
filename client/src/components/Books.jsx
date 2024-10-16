@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-//import BookItem from './BookItem';
+import BookItem from './BookItem';
 import BookForm from './BookForm';
 
 
@@ -26,7 +26,7 @@ const Books = () => {
         setBooks(data); // Update the books state with the fetched data
     } catch (error) {
         // If there's an error, set the error message
-        setError('Error fetching books:' + error.message);
+        setError('Error fetching books: ' + error.message);
     } finally{
         setLoading(false); 
     }
@@ -93,7 +93,7 @@ const Books = () => {
             onSubmit={editBook ? handleUpdateBook : handleAddBook}
             editBook={editBook} // Passing book to be edited
             />
-            {/* <ul>
+            <ul>
                 {books.map((book) => (
                     <BookItem
                     key={book.book_id} // Unique key each book
@@ -102,7 +102,7 @@ const Books = () => {
                     onDelete={() => handleDeleteBook(book.book_id)} // This handles deletion
                      />
                 ))}
-            </ul> */}
+            </ul>
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 // Define BookItem as a functional component
 const BookItem = ({book, onEdit, onDelete}) => {
